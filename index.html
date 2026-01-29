@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>URL extractor</title>
+</head>
+
+<body>
+  <textarea id="input" placeholder="paste here :url &quot;...&quot;"></textarea>
+  <button id="open">Open image</button>
+  <script>
+    const input = document.getElementById('input');
+    const openBtn = document.getElementById('open');
+
+    function extractUrl(text) {
+      const match = text.match(/:url\s*"([^"]+)"/);
+      return match ? match[1] : null;
+    }
+
+    openBtn.addEventListener('click', function () {
+      const url = extractUrl(input.value);
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert('No :url "..." found in the pasted text.');
+      }
+    });
+  </script>
+</body>
+
+</html>
