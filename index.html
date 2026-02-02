@@ -8,12 +8,24 @@
 </head>
 
 <body>
-  <textarea id="input" placeholder="paste here :url &quot;...&quot;"></textarea>
-  <button id="open">Open image</button>
-  <button id="download">Download image</button>
-  <p id="preview-title">Preview Box: might not be the original aspect ratio</p>
-  <div id="preview">
-    <img id="preview-img" alt="" />
+  <div id="app">
+    <header id="title-bar">url-image-extractor</header>
+    <main id="terminal">
+      <div id="input-area">
+        <textarea id="input" placeholder="paste here :url &quot;...&quot;"></textarea>
+        <div id="actions">
+          <button id="open">Open image</button>
+          <button id="download">Download image</button>
+        </div>
+      </div>
+      <div id="preview-area">
+        <p id="preview-title">Preview Box: might not be the original aspect ratio</p>
+        <div id="preview">
+          <img id="preview-img" alt="" />
+        </div>
+      </div>
+    </main>
+    <footer id="status-bar"></footer>
   </div>
   <script src="script.js"></script>
 </body>
