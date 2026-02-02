@@ -4,29 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>URL extractor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <textarea id="input" placeholder="paste here :url &quot;...&quot;"></textarea>
   <button id="open">Open image</button>
-  <script>
-    const input = document.getElementById('input');
-    const openBtn = document.getElementById('open');
-
-    function extractUrl(text) {
-      const match = text.match(/:url\s*"([^"]+)"/);
-      return match ? match[1] : null;
-    }
-
-    openBtn.addEventListener('click', function () {
-      const url = extractUrl(input.value);
-      if (url) {
-        window.open(url, '_blank');
-      } else {
-        alert('No :url "..." found in the pasted text.');
-      }
-    });
-  </script>
+  <button id="download">Download image</button>
+  <p id="preview-title">Preview Box: might not be the original aspect ratio</p>
+  <div id="preview">
+    <img id="preview-img" alt="" />
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
